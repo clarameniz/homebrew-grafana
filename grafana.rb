@@ -34,8 +34,10 @@ class Grafana < Formula
       args << "--force" unless build.bottle?
       system "node_modules/grunt-cli/bin/grunt", *args
 
-      bin.install "bin/grafana-cli"
-      bin.install "bin/grafana-server"
+      # bin.install "bin/grafana-cli"
+      # bin.install "bin/grafana-server"
+      bin.install "bin/darwin-amd64/grafana-cli"
+      bin.install "bin/darwin-amd64/grafana-server"
       (etc/"grafana").mkpath
       cp("conf/sample.ini", "conf/grafana.ini.example")
       etc.install "conf/sample.ini" => "grafana/grafana.ini"
