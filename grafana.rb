@@ -26,7 +26,7 @@ class Grafana < Formula
 
     cd grafana_path do
       system "go", "run", "build.go", "build"
-      system "yarn", "install"
+      system "yarn", "install", "--ignore-engines"
       system "npm", "install", "grunt-cli", *Language::Node.local_npm_install_args
 
       args = ["build"]
